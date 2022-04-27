@@ -1,4 +1,3 @@
-from xmlrpc.client import Boolean, boolean
 from methods import is_member_present_in_dict
 
 members = input("Enter names of all members (give comma ',' in between names):").split(',')
@@ -21,6 +20,16 @@ while (any_item_left):
     print("-------------------------------------------------------------------------------------------")
 
 print(f"Cost per member before any adjustments: {cost_for_each}")
+adjustment_needed=False
+adjustment_needed = eval(input("Any adjustments needed? True or False:"))
+
+if adjustment_needed:
+    adjustment_members=input("Name members for whom adjustment is needed:")
+    for member in adjustment_members.split(','):
+        if is_member_present_in_dict(cost_for_each,member):
+            adjust_amount = float(input(f"Enter amount to be adjusted for {member}:"))
+            cost_for_each[member]-=adjust_amount
+print(f"Final amount to be payed after adjustments: {cost_for_each}")
 
 
 
