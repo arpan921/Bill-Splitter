@@ -15,6 +15,7 @@ while (any_item_left):
     for member in divided_among:
         if is_member_present_in_dict(cost_for_each,member):
             cost_for_each[member] += cost_on_each
+    print(cost_for_each)
     any_item_left = eval(input("Any item left? True or False:"))
     item_count += 1
     print("-------------------------------------------------------------------------------------------")
