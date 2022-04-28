@@ -8,7 +8,7 @@ item_count=0
 while (any_item_left):
     print(f"This is for item {item_count+1}")
     item_price = float(input("Price:"))
-    divided_among = input("Enter list of members the item is divided using comma in between:").split(',')
+    divided_among = input("Enter list of members the item is divided using comma in between/type 'all' if you want to select all persons:").split(',')
     if divided_among[0]=='all':
         divided_among=members
     cost_on_each = item_price/len(divided_among)
